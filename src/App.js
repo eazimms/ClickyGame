@@ -32,23 +32,24 @@ class App extends Component {
     if(clickedMobileSuits.indexOf(id) === -1) {
       clickedMobileSuits.push(id); 
       this.handleIncrement(); 
+      console.log(clickedMobileSuits); 
 
 
-      this.makeShuffle(); 
-    
-    } else if (this.state.score = 90) {
-      this.setState({
+      this.msShuffle(); 
+    // Clearing if all the pics have been clicked without repeats. 
+    // } else if (this.state.score = 90) {
+    //   this.setState({
         
-        score: 0, 
-        clickedMobileSuits: []
-      }); 
+    //     score: 0, 
+    //     clickedMobileSuits: []
+    //   }); 
     } else {
       this.setState({
         score: 0, 
         clickedMobileSuits: []
       }); 
     }
-
+// Set highscore to the the current score if it's higher than the existing high score. 
     if(score > highscore){
       this.setState({
         highscore: score
@@ -61,9 +62,7 @@ class App extends Component {
     
   }; 
 
-  
-
-  makeShuffle = () => {
+  msShuffle = () => {
     this.setState({ zaku: shuffle(zaku) }); 
   }; 
   
@@ -79,7 +78,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header Score= {this.state.score} Highscore= {this.state.highscore}>Gundam Clicky Game</Header>
+        <Header>Gundam Clicky Game</Header>
         
         
         {this.state.zaku.map(zaku =>(
