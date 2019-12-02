@@ -6,6 +6,7 @@
   position: relative;
   width: 205px; 
   text-align: left; 
+  box-shadow: 0 3px 6px #000000;
 }
 
 .card > .img-container {
@@ -16,8 +17,8 @@
 }
 
 .card > .img-container > img {
-  width: 50%; 
-  height: 50%
+  width: 80%; 
+  height: 80%
 }
 
 .card > .content {
