@@ -36,13 +36,13 @@ class App extends Component {
 
 
       this.msShuffle(); 
-    // Clearing if all the pics have been clicked without repeats. 
-    // } else if (this.state.score = 90) {
-    //   this.setState({
+    
+    } else if (this.state.score = 90) {
+      this.setState({
         
-    //     score: 0, 
-    //     clickedMobileSuits: []
-    //   }); 
+        score: 0, 
+        clickedMobileSuits: []
+      }); 
     } else {
       this.setState({
         score: 0, 
@@ -55,20 +55,17 @@ class App extends Component {
         highscore: score
       }); 
     }
-
-    
-   
-    
     
   }; 
 
   msShuffle = () => {
     this.setState({ zaku: shuffle(zaku) }); 
   }; 
-  
   handleIncrement = () => {
     this.setState({ score: this.state.score + 10}); 
   }; 
+  
+  
   
 
   
@@ -78,7 +75,12 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Header>Gundam Clicky Game</Header>
+        <Header
+        score= {this.state.score}
+        highscore={this.state.highscore}
+        />
+          
+        
         
         
         {this.state.zaku.map(zaku =>(
